@@ -1,0 +1,19 @@
+<!--index.wxml-->
+
+  <view class="userinfo">
+    <block wx:if="{{hasUserInfo}}">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  </view>
+ 
+  <text class="userinfo-openid">{{userInfo.openid}}</text>
+<view class="section__title">
+  我的预约列表:</view>
+
+<view wx:for="{{bookings}}">
+<view class="section-1">
+  {{item.isFirst=='0'?'初诊':'复诊'}} {{item.time}}
+</view>
+</view>

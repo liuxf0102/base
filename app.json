@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/booking/booking",
+    "pages/calendar/cal"
+    
+    ],
+  "window": {
+    "navigationBarTitleText": "就诊预约"
+  },
+ "tabBar": {
+  "color": "#dddddd",
+  "selectedColor": "#3cc51f",
+  "borderStyle": "black",
+  "backgroundColor": "#ffffff",
+  "list": [
+    {
+      "pagePath": "pages/booking/booking",
+      "iconPath": "images/wechat.png",
+      "selectedIconPath": "images/wechatHL.png",
+      "text": "新预约"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "iconPath": "images/user.png",
+      "selectedIconPath": "images/userHL.png",
+      "text": "我"
+    }
+  ]
+},
+"networkTimeout": {
+  "request": 10000,
+  "connectSocket": 10000,
+  "uploadFile": 10000,
+  "downloadFile": 10000
+},
+"debug": true
+  
+}
