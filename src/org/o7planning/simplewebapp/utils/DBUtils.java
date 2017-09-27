@@ -15,7 +15,7 @@ public class DBUtils {
 	public static UserAccount findUser(Connection conn, //
 			String userName, String password) throws SQLException {
 
-		String sql = "Select a.User_Name, a.Password, a.Gender from User_Account a " //
+		String sql = "Select a.User_Name, a.Password, a.Gender from USER_ACCOUNT a " //
 				+ " where a.User_Name =?  and a.password= ?";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
@@ -36,7 +36,7 @@ public class DBUtils {
 
 	public static UserAccount findUser(Connection conn, String userName) throws SQLException {
 
-		String sql = "Select a.User_Name, a.Password, a.Gender from User_Account a "//
+		String sql = "Select a.User_Name, a.Password, a.Gender from USER_ACCOUNT a "//
 				+ " where a.User_Name =?  ";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class DBUtils {
 	}
 
 	public static List<Product> queryProduct(Connection conn) throws SQLException {
-		String sql = "Select a.Code, a.Name, a.Price from Product a ";
+		String sql = "Select a.Code, a.Name, a.Price from PRODUCT a ";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -77,7 +77,7 @@ public class DBUtils {
 	}
 
 	public static Product findProduct(Connection conn, String code) throws SQLException {
-		String sql = "Select a.Code, a.Name, a.Price from Product a where a.Code=?";
+		String sql = "Select a.Code, a.Name, a.Price from PRODUCT a where a.Code=?";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 		pstm.setString(1, code);
@@ -94,7 +94,7 @@ public class DBUtils {
 	}
 
 	public static void updateProduct(Connection conn, Product product) throws SQLException {
-		String sql = "Update Product set Name =?, Price=? where Code=? ";
+		String sql = "Update PRODUCT set Name =?, Price=? where Code=? ";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -105,7 +105,7 @@ public class DBUtils {
 	}
 
 	public static void insertProduct(Connection conn, Product product) throws SQLException {
-		String sql = "Insert into Product(Code, Name,Price) values (?,?,?)";
+		String sql = "Insert into PRODUCT(Code, Name,Price) values (?,?,?)";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 
@@ -117,7 +117,7 @@ public class DBUtils {
 	}
 
 	public static void deleteProduct(Connection conn, String code) throws SQLException {
-		String sql = "Delete From Product where Code=? ";
+		String sql = "Delete from PRODUCT where Code=? ";
 
 		PreparedStatement pstm = conn.prepareStatement(sql);
 
